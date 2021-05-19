@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "133118620009",
+    "project_id": "fastwitter-app",
+    "storage_bucket": "fastwitter-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133118620009:android:520ac56651f81f46084df8",
+        "android_client_info": {
+          "package_name": "com.ahmedrahim.FASTwitter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "133118620009-8o836plrellkhdb4r8437cbmai7276m0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNpAG0btLIADRXpDUPYg5cWicKprkdfC8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "133118620009-8o836plrellkhdb4r8437cbmai7276m0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
