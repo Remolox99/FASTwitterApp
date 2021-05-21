@@ -118,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 25),
                               child: Text(
-                                'There is No New Tweets',
+                                'There Are No New Tweets',
                                 style: TextStyle(
                                   fontSize: 20,
                                 ),

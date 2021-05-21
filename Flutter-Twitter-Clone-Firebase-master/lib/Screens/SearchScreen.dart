@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:twitter/Constants/Constants.dart';
 import 'package:twitter/Models/UserModel.dart';
 import 'package:twitter/Screens/ProfileScreen.dart';
 import 'package:twitter/Services/DatabaseServices.dart';

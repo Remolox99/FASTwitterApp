@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:twitter/Constants/Constants.dart';
-import 'package:twitter/Screens/CreateTweetScreen.dart';
 import 'package:twitter/Screens/HomeScreen.dart';
 import 'package:twitter/Screens/NotificationsScreen.dart';
 import 'package:twitter/Screens/ProfileScreen.dart';

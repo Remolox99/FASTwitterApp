@@ -138,7 +138,7 @@ class DatabaseServices {
     DocumentReference tweetDocProfile =
         tweetsRef.doc(tweet.authorId).collection('userTweets').doc(tweet.id);
     tweetDocProfile.get().then((doc) {
-      int likes = doc.data()['likes'];
+      int likes = doc.get('likes');
       tweetDocProfile.update({'likes': likes + 1});
     });
 
@@ -146,7 +146,7 @@ class DatabaseServices {
         feedRefs.doc(currentUserId).collection('userFeed').doc(tweet.id);
     tweetDocFeed.get().then((doc) {
       if (doc.exists) {
-        int likes = doc.data()['likes'];
+        int likes = doc.get('likes');
         tweetDocFeed.update({'likes': likes + 1});
       }
     });
@@ -160,7 +160,7 @@ class DatabaseServices {
     DocumentReference tweetDocProfile =
         tweetsRef.doc(tweet.authorId).collection('userTweets').doc(tweet.id);
     tweetDocProfile.get().then((doc) {
-      int likes = doc.data()['likes'];
+      int likes = doc.get('likes');
       tweetDocProfile.update({'likes': likes - 1});
     });
 
@@ -168,7 +168,7 @@ class DatabaseServices {
         feedRefs.doc(currentUserId).collection('userFeed').doc(tweet.id);
     tweetDocFeed.get().then((doc) {
       if (doc.exists) {
-        int likes = doc.data()['likes'];
+        int likes = doc.get('likes');
         tweetDocFeed.update({'likes': likes - 1});
       }
     });

@@ -3,6 +3,8 @@ import 'package:twitter/Constants/Constants.dart';
 import 'package:twitter/Services/auth_service.dart';
 import 'package:twitter/Widgets/RoundedButton.dart';
 
+import 'FeedScreen.dart';
+
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -61,7 +63,16 @@ class _LoginScreenState extends State<LoginScreen> {
               onBtnPressed: () async {
                 bool isValid = await AuthService.login(_email, _password);
                 if (isValid) {
-                  Navigator.pop(context);
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return FeedScreen(currentUserId: AuthService.signedInUser.uid);
+                      },
+                    ),
+                  );
+                  // AuthService.
+                  // Navigator.pop(context);
                 } else {
                   print('login problem');
                 }
