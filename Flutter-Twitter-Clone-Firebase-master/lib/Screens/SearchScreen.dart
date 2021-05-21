@@ -98,16 +98,16 @@ class _SearchScreenState extends State<SearchScreen> {
                     child: CircularProgressIndicator(),
                   );
                 }
-                if (snapshot.data.documents.length == 0) {
+                if (snapshot.data.docs.length == 0) {
                   return Center(
                     child: Text('No users found!'),
                   );
                 }
                 return ListView.builder(
-                    itemCount: snapshot.data.documents.length,
+                    itemCount: snapshot.data.docs.length,
                     itemBuilder: (BuildContext context, int index) {
                       UserModel user =
-                          UserModel.fromDoc(snapshot.data.documents[index]);
+                          UserModel.fromDoc(snapshot.data.docs[index]);
                       return buildUserTile(user);
                     });
               }),
