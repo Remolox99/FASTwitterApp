@@ -82,15 +82,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
   handleImageFromGallery() async {
     try {
-      File imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
+      var imageFile = await ImagePicker().getImage(source: ImageSource.gallery);
       if (imageFile != null) {
         if (_imagePickedType == 'profile') {
           setState(() {
-            _profileImage = imageFile;
+            _profileImage = File(imageFile.path);
           });
         } else if (_imagePickedType == 'cover') {
           setState(() {
-            _coverImage = imageFile;
+            _coverImage = File(imageFile.path);
           });
         }
       }

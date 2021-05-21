@@ -24,10 +24,10 @@ class _CreateTweetScreenState extends State<CreateTweetScreen> {
 
   handleImageFromGallery() async {
     try {
-      File imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
+      PickedFile imageFile = await ImagePicker().getImage(source: ImageSource.gallery);
       if (imageFile != null) {
         setState(() {
-          _pickedImage = imageFile;
+          _pickedImage = File(imageFile.path);
         });
       }
     } catch (e) {
