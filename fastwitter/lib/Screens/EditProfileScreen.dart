@@ -1,12 +1,11 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:fastwitter/Constants/Constants.dart';
-import 'package:fastwitter/Models/UserModel.dart';
-import 'package:fastwitter/Services/DatabaseServices.dart';
-import 'package:fastwitter/Services/StorageService.dart';
+import 'package:FASTwitter/Constants/Constants.dart';
+import 'package:FASTwitter/Models/UserModel.dart';
+import 'package:FASTwitter/Services/DatabaseServices.dart';
+import 'package:FASTwitter/Services/StorageService.dart';
 
 class EditProfileScreen extends StatefulWidget {
   final UserModel user;

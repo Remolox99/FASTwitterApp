@@ -1,6 +1,6 @@
-# fastwitter
+# FASTwitter
 
-FASTWitter App
+FASTwitter App
 
 ## Getting Started
 

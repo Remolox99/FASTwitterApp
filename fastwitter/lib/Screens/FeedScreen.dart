@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fastwitter/Constants/Constants.dart';
-import 'package:fastwitter/Screens/HomeScreen.dart';
-import 'package:fastwitter/Screens/NotificationsScreen.dart';
-import 'package:fastwitter/Screens/ProfileScreen.dart';
-import 'package:fastwitter/Screens/SearchScreen.dart';
+import 'package:FASTwitter/Constants/Constants.dart';
+import 'package:FASTwitter/Screens/HomeScreen.dart';
+import 'package:FASTwitter/Screens/NotificationsScreen.dart';
+import 'package:FASTwitter/Screens/ProfileScreen.dart';
+import 'package:FASTwitter/Screens/SearchScreen.dart';
 
 class FeedScreen extends StatefulWidget {
   final String currentUserId;

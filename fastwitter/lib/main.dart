@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:fastwitter/Screens/FeedScreen.dart';
-import 'package:fastwitter/Screens/WelcomeScreen.dart';
+import 'package:FASTwitter/Screens/FeedScreen.dart';
+import 'package:FASTwitter/Screens/WelcomeScreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

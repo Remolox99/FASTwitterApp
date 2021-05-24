@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fastwitter/Constants/Constants.dart';
-import 'package:fastwitter/Services/auth_service.dart';
-import 'package:fastwitter/Widgets/RoundedButton.dart';
+import 'package:FASTwitter/Constants/Constants.dart';
+import 'package:FASTwitter/Services/auth_service.dart';
+import 'package:FASTwitter/Widgets/RoundedButton.dart';
 
 class RegistrationScreen extends StatefulWidget {
   @override

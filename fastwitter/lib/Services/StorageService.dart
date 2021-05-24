@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:fastwitter/Constants/Constants.dart';
+import 'package:FASTwitter/Constants/Constants.dart';
 import 'package:uuid/uuid.dart';
 
 class StorageService {
