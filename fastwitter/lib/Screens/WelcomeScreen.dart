@@ -25,36 +25,67 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                   Image.asset(
                     'assets/logo.png',
-                    height: 200,
-                    width: 200,
+                    height: 250,
+                    width: 250,
                   ),
-                  Text(
-                    'See what’s happening in the world right now',
-                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                  Image.asset(
+                    'assets/logotext1.png',
+                    height: 100,
+                    width: 400,
                   ),
                 ],
               ),
               Column(
                 children: [
-                  RoundedButton(
-                      btnText: 'LOG IN',
-                      onBtnPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginScreen()));
-                      }),
-                  SizedBox(
-                    height: 30,
+                  ElevatedButton(
+                    child: Text(
+                      'Login',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.lightBlue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(32.0),
+                      ),
+                      elevation: 3,
+                      minimumSize: Size(250, 55),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
+                    },
                   ),
-                  RoundedButton(
-                      btnText: 'Create account',
-                      onBtnPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => RegistrationScreen()));
-                      }),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    child: Text(
+                      'Sign Up',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.lightBlue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(32.0),
+                      ),
+                      elevation: 3,
+                      minimumSize: Size(250, 55),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegistrationScreen(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               )
             ],

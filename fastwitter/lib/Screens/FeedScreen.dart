@@ -40,7 +40,7 @@ class _FeedScreenState extends State<FeedScreen> {
             _selectedTab = index;
           });
         },
-        activeColor: KTweeterColor,
+        activeColor: StdColor,
         currentIndex: _selectedTab,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home)),

@@ -123,7 +123,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 Container(
                   height: 150,
                   decoration: BoxDecoration(
-                    color: KTweeterColor,
+                    color: StdColor,
                     image: _coverImage == null && widget.user.coverImage.isEmpty
                         ? null
                         : DecorationImage(
@@ -214,7 +214,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: KTweeterColor,
+                          color: StdColor,
                         ),
                         child: Center(
                           child: Text(
@@ -239,7 +239,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           initialValue: _name,
                           decoration: InputDecoration(
                             labelText: 'Name',
-                            labelStyle: TextStyle(color: KTweeterColor),
+                            labelStyle: TextStyle(color: StdColor),
                           ),
                           validator: (input) => input.trim().length < 2
                               ? 'please enter valid name'
@@ -253,7 +253,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           initialValue: _bio,
                           decoration: InputDecoration(
                             labelText: 'Bio',
-                            labelStyle: TextStyle(color: KTweeterColor),
+                            labelStyle: TextStyle(color: StdColor),
                           ),
                           onSaved: (value) {
                             _bio = value;
@@ -263,7 +263,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         _isLoading
                             ? CircularProgressIndicator(
                                 valueColor:
-                                    AlwaysStoppedAnimation(KTweeterColor),
+                                    AlwaysStoppedAnimation(StdColor),
                               )
                             : SizedBox.shrink()
                       ],

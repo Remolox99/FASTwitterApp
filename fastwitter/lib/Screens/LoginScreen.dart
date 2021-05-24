@@ -16,18 +16,18 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: KTweeterColor,
-        centerTitle: true,
-        elevation: 0,
-        title: Text(
-          'Log in',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+        appBar: AppBar(
+          backgroundColor: StdColor,
+          centerTitle: true,
+          elevation: 0,
+          title: Text(
+            'Login',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
-      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
               },
             ),
             SizedBox(
-              height: 30,
+              height: 20,
             ),
             TextField(
               obscureText: true,
@@ -56,11 +56,23 @@ class _LoginScreenState extends State<LoginScreen> {
               },
             ),
             SizedBox(
-              height: 40,
+              height: 35,
             ),
-            RoundedButton(
-              btnText: 'LOG IN',
-              onBtnPressed: () async {
+            ElevatedButton(
+              child: Text(
+                'Login',
+                style:
+                TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.lightBlue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(32.0),
+                ),
+                elevation: 3,
+                minimumSize: Size(250, 55),
+              ),
+              onPressed: () async {
                 bool isValid = await AuthService.login(_email, _password);
                 if (isValid) {
                   Navigator.pushReplacement(

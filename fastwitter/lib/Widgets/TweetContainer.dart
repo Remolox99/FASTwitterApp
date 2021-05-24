@@ -92,7 +92,7 @@ class _TweetContainerState extends State<TweetContainer> {
                     Container(
                       height: 250,
                       decoration: BoxDecoration(
-                          color: KTweeterColor,
+                          color: StdColor,
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
                             fit: BoxFit.cover,
@@ -115,7 +115,7 @@ class _TweetContainerState extends State<TweetContainer> {
                     onPressed: likeTweet,
                   ),
                   Text(
-                    _likesCount.toString() + ' Likes',
+                    _likesCount.toString(),
                   ),
                 ],
               ),

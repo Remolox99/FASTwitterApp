@@ -49,7 +49,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Divider(
-                    color: KTweeterColor,
+                    color: StdColor,
                     thickness: 1,
                   ),
                 )
@@ -69,13 +69,13 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          centerTitle: true,
+          backgroundColor: StdColor,
           elevation: 0.5,
+          centerTitle: true,
           title: Text(
-            'Notifications',
+            'Notification',
             style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
         ),

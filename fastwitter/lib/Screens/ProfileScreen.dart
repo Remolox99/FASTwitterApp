@@ -89,7 +89,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   getFollowersCount() async {
     int followersCount =
-        await DatabaseServices.followersNum(widget.visitedUserId);
+    await DatabaseServices.followersNum(widget.visitedUserId);
     if (mounted) {
       setState(() {
         _followersCount = followersCount;
@@ -99,7 +99,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   getFollowingCount() async {
     int followingCount =
-        await DatabaseServices.followingNum(widget.visitedUserId);
+    await DatabaseServices.followingNum(widget.visitedUserId);
     if (mounted) {
       setState(() {
         _followingCount = followingCount;
@@ -141,7 +141,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   getAllTweets() async {
     List<Tweet> userTweets =
-        await DatabaseServices.getUserTweets(widget.visitedUserId);
+    await DatabaseServices.getUserTweets(widget.visitedUserId);
     if (mounted) {
       setState(() {
         _allTweets = userTweets;
@@ -170,7 +170,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             if (!snapshot.hasData) {
               return Center(
                 child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation(KTweeterColor),
+                  valueColor: AlwaysStoppedAnimation(StdColor),
                 ),
               );
             }
@@ -180,15 +180,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   parent: AlwaysScrollableScrollPhysics()),
               children: [
                 Container(
-                  height: 150,
+                  height: 180,
                   decoration: BoxDecoration(
-                    color: KTweeterColor,
+                    color: StdColor,
                     image: userModel.coverImage.isEmpty
                         ? null
                         : DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage(userModel.coverImage),
-                          ),
+                      fit: BoxFit.cover,
+                      image: NetworkImage(userModel.coverImage),
+                    ),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -200,38 +200,38 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         SizedBox.shrink(),
                         widget.currentUserId == widget.visitedUserId
                             ? PopupMenuButton(
-                                icon: Icon(
-                                  Icons.more_horiz,
-                                  color: Colors.white,
-                                  size: 30,
-                                ),
-                                itemBuilder: (_) {
-                                  return <PopupMenuItem<String>>[
-                                    new PopupMenuItem(
-                                      child: Text('Logout'),
-                                      value: 'logout',
-                                    )
-                                  ];
-                                },
-                                onSelected: (selectedItem) {
-                                  if (selectedItem == 'logout') {
-                                    AuthService.logout();
-                                    Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                WelcomeScreen()));
-                                  }
-                                },
+                          icon: Icon(
+                            Icons.more_horiz,
+                            color: Colors.white,
+                            size: 35,
+                          ),
+                          itemBuilder: (_) {
+                            return <PopupMenuItem<String>>[
+                              new PopupMenuItem(
+                                child: Text('Logout'),
+                                value: 'logout',
                               )
+                            ];
+                          },
+                          onSelected: (selectedItem) {
+                            if (selectedItem == 'logout') {
+                              AuthService.logout();
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          WelcomeScreen()));
+                            }
+                          },
+                        )
                             : SizedBox(),
                       ],
                     ),
                   ),
                 ),
                 Container(
-                  transform: Matrix4.translationValues(0.0, -40.0, 0.0),
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  transform: Matrix4.translationValues(0.0, -35.0, 0.0),
+                  padding: EdgeInsets.symmetric(horizontal: 15),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -247,70 +247,70 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           widget.currentUserId == widget.visitedUserId
                               ? GestureDetector(
-                                  onTap: () async {
-                                    await Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => EditProfileScreen(
-                                          user: userModel,
-                                        ),
-                                      ),
-                                    );
-                                    setState(() {});
-                                  },
-                                  child: Container(
-                                    width: 100,
-                                    height: 35,
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 10),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      color: Colors.white,
-                                      border: Border.all(color: KTweeterColor),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        'Edit',
-                                        style: TextStyle(
-                                          fontSize: 17,
-                                          color: KTweeterColor,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                )
-                              : GestureDetector(
-                                  onTap: followOrUnFollow,
-                                  child: Container(
-                                    width: 100,
-                                    height: 35,
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 10),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      color: _isFollowing
-                                          ? Colors.white
-                                          : KTweeterColor,
-                                      border: Border.all(color: KTweeterColor),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        _isFollowing ? 'Following' : 'Follow',
-                                        style: TextStyle(
-                                          fontSize: 17,
-                                          color: _isFollowing
-                                              ? KTweeterColor
-                                              : Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => EditProfileScreen(
+                                    user: userModel,
                                   ),
                                 ),
+                              );
+                              setState(() {});
+                            },
+                            child: Container(
+                              width: 80,
+                              height: 35,
+                              padding:
+                              EdgeInsets.symmetric(horizontal: 10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.white,
+                                border: Border.all(color: StdColor),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Edit',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: StdColor,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                              : GestureDetector(
+                            onTap: followOrUnFollow,
+                            child: Container(
+                              width: 100,
+                              height: 35,
+                              padding:
+                              EdgeInsets.symmetric(horizontal: 10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: _isFollowing
+                                    ? Colors.white
+                                    : StdColor,
+                                border: Border.all(color: StdColor),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  _isFollowing ? 'Following' : 'Follow',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: _isFollowing
+                                        ? StdColor
+                                        : Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 5),
                       Text(
                         userModel.name,
                         style: TextStyle(
@@ -325,44 +325,39 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           fontSize: 15,
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: 5),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
                             '$_followingCount Following',
                             style: TextStyle(
                               fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: 2,
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
-                          SizedBox(width: 20),
+                          SizedBox(width: 10),
                           Text(
                             '$_followersCount Followers',
                             style: TextStyle(
                               fontSize: 16,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w400,
                               letterSpacing: 2,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        child: CupertinoSlidingSegmentedControl(
-                          groupValue: _profileSegmentedValue,
-                          thumbColor: KTweeterColor,
-                          backgroundColor: Colors.blueGrey,
-                          children: _profileTabs,
-                          onValueChanged: (i) {
-                            setState(() {
-                              _profileSegmentedValue = i;
-                            });
-                          },
-                        ),
-                      )
                     ],
+                  ),
+                ),
+                SizedBox(
+                  height: 2.0,
+                  child: new Center(
+                    child: new Container(
+                      margin: new EdgeInsetsDirectional.only(start: 1.0, end: 1.0),
+                      height: 2.0,
+                      color: Colors.black12,
+                    ),
                   ),
                 ),
                 buildProfileWidgets(userModel),

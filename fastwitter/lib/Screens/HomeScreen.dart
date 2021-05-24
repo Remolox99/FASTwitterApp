@@ -84,17 +84,13 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: StdColor,
           elevation: 0.5,
           centerTitle: true,
-          leading: Container(
-            height: 40,
-            child: Image.asset('assets/logo.png'),
-          ),
           title: Text(
-            'Home Screen',
+            'Home',
             style: TextStyle(
-              color: KTweeterColor,
+              color: Colors.white,
             ),
           ),
         ),
@@ -118,9 +114,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 25),
                               child: Text(
-                                'There Are No New Tweets',
+                                'Your Feed Is Empty',
                                 style: TextStyle(
                                   fontSize: 20,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
                             )

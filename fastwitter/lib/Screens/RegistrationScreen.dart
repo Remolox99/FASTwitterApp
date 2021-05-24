@@ -16,7 +16,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: KTweeterColor,
+        backgroundColor: StdColor,
         centerTitle: true,
         elevation: 0,
         title: Text(
@@ -43,7 +43,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               },
             ),
             SizedBox(
-              height: 30,
+              height: 20,
             ),
             TextField(
               decoration: InputDecoration(
@@ -54,7 +54,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               },
             ),
             SizedBox(
-              height: 30,
+              height: 20,
             ),
             TextField(
               obscureText: true,
@@ -66,17 +66,29 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               },
             ),
             SizedBox(
-              height: 40,
+              height: 35,
             ),
-            RoundedButton(
-              btnText: 'Create account',
-              onBtnPressed: () async {
+            ElevatedButton(
+              child: Text(
+                'Create Account',
+                style:
+                TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.lightBlue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(32.0),
+                ),
+                elevation: 3,
+                minimumSize: Size(250, 55),
+              ),
+              onPressed: () async {
                 bool isValid =
-                    await AuthService.signUp(_name, _email, _password);
+                await AuthService.signUp(_name, _email, _password);
                 if (isValid) {
                   Navigator.pop(context);
                 } else {
-                  print('something wrong');
+                  print('Something went wrong');
                 }
               },
             ),

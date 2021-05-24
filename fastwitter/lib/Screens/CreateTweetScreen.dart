@@ -40,7 +40,7 @@ class _CreateTweetScreenState extends State<CreateTweetScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: KTweeterColor,
+        backgroundColor: StdColor,
         centerTitle: true,
         title: Text(
           'Tweet',
@@ -50,94 +50,96 @@ class _CreateTweetScreenState extends State<CreateTweetScreen> {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          children: [
-            SizedBox(height: 20),
-            TextField(
-              maxLength: 280,
-              maxLines: 7,
-              decoration: InputDecoration(
-                hintText: 'Enter your Tweet',
-              ),
-              onChanged: (value) {
-                _tweetText = value;
-              },
-            ),
-            SizedBox(height: 10),
-            _pickedImage == null
-                ? SizedBox.shrink()
-                : Column(
-                    children: [
-                      Container(
-                        height: 200,
-                        decoration: BoxDecoration(
-                            color: KTweeterColor,
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: FileImage(_pickedImage),
-                            )),
-                      ),
-                      SizedBox(height: 20),
-                    ],
-                  ),
-            GestureDetector(
-              onTap: handleImageFromGallery,
-              child: Container(
-                height: 70,
-                width: 70,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                  border: Border.all(
-                    color: KTweeterColor,
-                    width: 2,
-                  ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+              TextField(
+                maxLength: 280,
+                maxLines: 7,
+                decoration: InputDecoration(
+                  hintText: 'Enter your Tweet',
                 ),
-                child: Icon(
-                  Icons.camera_alt,
-                  size: 50,
-                  color: KTweeterColor,
-                ),
+                onChanged: (value) {
+                  _tweetText = value;
+                },
               ),
-            ),
-            SizedBox(height: 20),
-            RoundedButton(
-              btnText: 'Tweet',
-              onBtnPressed: () async {
-                setState(() {
-                  _loading = true;
-                });
-                if (_tweetText != null && _tweetText.isNotEmpty) {
-                  String image;
-                  if (_pickedImage == null) {
-                    image = '';
-                  } else {
-                    image =
-                        await StorageService.uploadTweetPicture(_pickedImage);
-                  }
-                  Tweet tweet = Tweet(
-                    text: _tweetText,
-                    image: image,
-                    authorId: widget.currentUserId,
-                    likes: 0,
-                    retweets: 0,
-                    timestamp: Timestamp.fromDate(
-                      DateTime.now(),
+              SizedBox(height: 10),
+              _pickedImage == null
+                  ? SizedBox.shrink()
+                  : Column(
+                      children: [
+                        Container(
+                          height: 200,
+                          decoration: BoxDecoration(
+                              color: StdColor,
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: FileImage(_pickedImage),
+                              )),
+                        ),
+                        SizedBox(height: 20),
+                      ],
                     ),
-                  );
-                  DatabaseServices.createTweet(tweet);
-                  Navigator.pop(context);
-                }
-                setState(() {
-                  _loading = false;
-                });
-              },
-            ),
-            SizedBox(height: 20),
-            _loading ? CircularProgressIndicator() : SizedBox.shrink()
-          ],
+              GestureDetector(
+                onTap: handleImageFromGallery,
+                child: Container(
+                  height: 70,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    border: Border.all(
+                      color: StdColor,
+                      width: 2,
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.camera_alt,
+                    size: 50,
+                    color: StdColor,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              RoundedButton(
+                btnText: 'Tweet',
+                onBtnPressed: () async {
+                  setState(() {
+                    _loading = true;
+                  });
+                  if (_tweetText != null && _tweetText.isNotEmpty) {
+                    String image;
+                    if (_pickedImage == null) {
+                      image = '';
+                    } else {
+                      image =
+                          await StorageService.uploadTweetPicture(_pickedImage);
+                    }
+                    Tweet tweet = Tweet(
+                      text: _tweetText,
+                      image: image,
+                      authorId: widget.currentUserId,
+                      likes: 0,
+                      retweets: 0,
+                      timestamp: Timestamp.fromDate(
+                        DateTime.now(),
+                      ),
+                    );
+                    DatabaseServices.createTweet(tweet);
+                    Navigator.pop(context);
+                  }
+                  setState(() {
+                    _loading = false;
+                  });
+                },
+              ),
+              SizedBox(height: 20),
+              _loading ? CircularProgressIndicator() : SizedBox.shrink()
+            ],
+          ),
         ),
       ),
     );

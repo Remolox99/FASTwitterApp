@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 
-const Color KTweeterColor = Color(0xff00acee);
+const Color StdColor = Color(0xff00acee);
 
 final _fireStore = FirebaseFirestore.instance;
 

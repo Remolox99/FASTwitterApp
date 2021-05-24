@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fastwitter/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 import 'package:fastwitter/Models/UserModel.dart';
 import 'package:fastwitter/Screens/ProfileScreen.dart';
@@ -49,11 +50,12 @@ class _SearchScreenState extends State<SearchScreen> {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0.5,
+        backgroundColor: StdColor,
         title: TextField(
           controller: _searchController,
           decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: 15),
-            hintText: 'Search Twitter...',
+            hintText: 'Search...',
             hintStyle: TextStyle(color: Colors.white),
             border: InputBorder.none,
             prefixIcon: Icon(Icons.search, color: Colors.white),
@@ -82,9 +84,9 @@ class _SearchScreenState extends State<SearchScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.search, size: 200),
+                  Icon(Icons.search_rounded, color: Colors.lightBlue, size: 150),
                   Text(
-                    'Search Twitter...',
+                    'Look for something...',
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
                   )
                 ],
