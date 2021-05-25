@@ -43,7 +43,7 @@ class _CreateTweetScreenState extends State<CreateTweetScreen> {
         backgroundColor: StdColor,
         centerTitle: true,
         title: Text(
-          'Tweet',
+          'Post',
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,
@@ -60,7 +60,7 @@ class _CreateTweetScreenState extends State<CreateTweetScreen> {
                 maxLength: 280,
                 maxLines: 7,
                 decoration: InputDecoration(
-                  hintText: 'Enter your Tweet',
+                  hintText: 'Write Something...',
                 ),
                 onChanged: (value) {
                   _tweetText = value;
@@ -70,19 +70,19 @@ class _CreateTweetScreenState extends State<CreateTweetScreen> {
               _pickedImage == null
                   ? SizedBox.shrink()
                   : Column(
-                      children: [
-                        Container(
-                          height: 200,
-                          decoration: BoxDecoration(
-                              color: StdColor,
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: FileImage(_pickedImage),
-                              )),
-                        ),
-                        SizedBox(height: 20),
-                      ],
-                    ),
+                children: [
+                  Container(
+                    height: 200,
+                    decoration: BoxDecoration(
+                        color: StdColor,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: FileImage(_pickedImage),
+                        )),
+                  ),
+                  SizedBox(height: 20),
+                ],
+              ),
               GestureDetector(
                 onTap: handleImageFromGallery,
                 child: Container(
@@ -97,16 +97,28 @@ class _CreateTweetScreenState extends State<CreateTweetScreen> {
                     ),
                   ),
                   child: Icon(
-                    Icons.camera_alt,
+                    Icons.camera_alt_rounded,
                     size: 50,
                     color: StdColor,
                   ),
                 ),
               ),
               SizedBox(height: 20),
-              RoundedButton(
-                btnText: 'Tweet',
-                onBtnPressed: () async {
+              ElevatedButton(
+                child: Text(
+                  'Post',
+                  style:
+                  TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.lightBlue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32.0),
+                  ),
+                  elevation: 3,
+                  minimumSize: Size(250, 55),
+                ),
+                onPressed: () async {
                   setState(() {
                     _loading = true;
                   });
@@ -116,7 +128,7 @@ class _CreateTweetScreenState extends State<CreateTweetScreen> {
                       image = '';
                     } else {
                       image =
-                          await StorageService.uploadTweetPicture(_pickedImage);
+                      await StorageService.uploadTweetPicture(_pickedImage);
                     }
                     Tweet tweet = Tweet(
                       text: _tweetText,
