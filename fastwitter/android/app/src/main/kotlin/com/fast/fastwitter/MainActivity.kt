@@ -1,4 +1,4 @@
-package com.fast.FASTwitter
+package com.fast.fastwitter
 
 import io.flutter.embedding.android.FlutterActivity
 

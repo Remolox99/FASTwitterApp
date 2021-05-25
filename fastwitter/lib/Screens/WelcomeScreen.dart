@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:FASTwitter/Screens/LoginScreen.dart';
-import 'package:FASTwitter/Screens/RegistrationScreen.dart';
-import 'package:FASTwitter/Widgets/RoundedButton.dart';
+import 'package:fastwitter/Screens/LoginScreen.dart';
+import 'package:fastwitter/Screens/RegistrationScreen.dart';
+import 'package:fastwitter/Widgets/RoundedButton.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override

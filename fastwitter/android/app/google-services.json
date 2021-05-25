@@ -1,15 +1,15 @@
 {
   "project_info": {
     "project_number": "133118620009",
-    "project_id": "FASTwitter-app",
-    "storage_bucket": "FASTwitter-app.appspot.com"
+    "project_id": "fastwitter-app",
+    "storage_bucket": "fastwitter-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:133118620009:android:e93a137f56032fbc084df8",
         "android_client_info": {
-          "package_name": "com.fast.FASTwitter"
+          "package_name": "com.fast.fastwitter"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "133118620009-216uvu55vusoeq1qj4h9im3948bhlndf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.fast.FASTwitter",
+            "package_name": "com.fast.fastwitter",
             "certificate_hash": "4eb5faee7dc542ffb66a7aa148debc76a67cde14"
           }
         },

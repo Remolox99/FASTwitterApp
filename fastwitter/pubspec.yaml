@@ -1,5 +1,6 @@
-name: FASTwitter
-description: FASTwitter App
+
+name: fastwitter
+description: FASTWitter App
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -38,14 +39,8 @@ dependencies:
   uuid:
 
 dev_dependencies:
-  flutter_launcher_icons: "^0.8.0"
   flutter_test:
     sdk: flutter
-
-flutter_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/logo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

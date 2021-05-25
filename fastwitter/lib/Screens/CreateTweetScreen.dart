@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:FASTwitter/Constants/Constants.dart';
-import 'package:FASTwitter/Models/Tweet.dart';
-import 'package:FASTwitter/Services/DatabaseServices.dart';
-import 'package:FASTwitter/Services/StorageService.dart';
-import 'package:FASTwitter/Widgets/RoundedButton.dart';
+import 'package:fastwitter/Constants/Constants.dart';
+import 'package:fastwitter/Models/Tweet.dart';
+import 'package:fastwitter/Services/DatabaseServices.dart';
+import 'package:fastwitter/Services/StorageService.dart';
+import 'package:fastwitter/Widgets/RoundedButton.dart';
 
 class CreateTweetScreen extends StatefulWidget {
   final String currentUserId;
@@ -43,7 +43,7 @@ class _CreateTweetScreenState extends State<CreateTweetScreen> {
         backgroundColor: StdColor,
         centerTitle: true,
         title: Text(
-          'Post',
+          'Tweet',
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,
@@ -60,7 +60,7 @@ class _CreateTweetScreenState extends State<CreateTweetScreen> {
                 maxLength: 280,
                 maxLines: 7,
                 decoration: InputDecoration(
-                  hintText: 'Write Something...',
+                  hintText: 'Enter your Tweet',
                 ),
                 onChanged: (value) {
                   _tweetText = value;
@@ -97,28 +97,16 @@ class _CreateTweetScreenState extends State<CreateTweetScreen> {
                     ),
                   ),
                   child: Icon(
-                    Icons.camera_alt_rounded,
+                    Icons.camera_alt,
                     size: 50,
                     color: StdColor,
                   ),
                 ),
               ),
               SizedBox(height: 20),
-              ElevatedButton(
-                child: Text(
-                  'Post',
-                  style:
-                  TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                ),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.lightBlue,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(32.0),
-                  ),
-                  elevation: 3,
-                  minimumSize: Size(250, 55),
-                ),
-                onPressed: () async {
+              RoundedButton(
+                btnText: 'Tweet',
+                onBtnPressed: () async {
                   setState(() {
                     _loading = true;
                   });
@@ -128,7 +116,7 @@ class _CreateTweetScreenState extends State<CreateTweetScreen> {
                       image = '';
                     } else {
                       image =
-                      await StorageService.uploadTweetPicture(_pickedImage);
+                          await StorageService.uploadTweetPicture(_pickedImage);
                     }
                     Tweet tweet = Tweet(
                       text: _tweetText,

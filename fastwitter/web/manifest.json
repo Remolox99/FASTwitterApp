@@ -1,11 +1,11 @@
 {
-    "name": "FASTwitter",
-    "short_name": "FASTwitter",
+    "name": "fastwitter",
+    "short_name": "fastwitter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "FASTwitter App",
+    "description": "FASTWitter App",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

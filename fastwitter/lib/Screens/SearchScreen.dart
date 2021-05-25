@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:FASTwitter/Constants/Constants.dart';
+import 'package:fastwitter/Constants/Constants.dart';
 import 'package:flutter/material.dart';
-import 'package:FASTwitter/Models/UserModel.dart';
-import 'package:FASTwitter/Screens/ProfileScreen.dart';
-import 'package:FASTwitter/Services/DatabaseServices.dart';
+import 'package:fastwitter/Models/UserModel.dart';
+import 'package:fastwitter/Screens/ProfileScreen.dart';
+import 'package:fastwitter/Services/DatabaseServices.dart';
 
 class SearchScreen extends StatefulWidget {
   final String currentUserId;

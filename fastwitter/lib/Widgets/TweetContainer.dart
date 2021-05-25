@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:FASTwitter/Constants/Constants.dart';
-import 'package:FASTwitter/Models/Tweet.dart';
-import 'package:FASTwitter/Models/UserModel.dart';
-import 'package:FASTwitter/Services/DatabaseServices.dart';
+import 'package:fastwitter/Constants/Constants.dart';
+import 'package:fastwitter/Models/Tweet.dart';
+import 'package:fastwitter/Models/UserModel.dart';
+import 'package:fastwitter/Services/DatabaseServices.dart';
 
 class TweetContainer extends StatefulWidget {
   final Tweet tweet;
